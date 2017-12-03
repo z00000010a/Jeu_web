@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Space Demo</title>
+    <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+    <script language="javascript" src="javascripts/jquery.hotkeys.js" type="text/javascript"></script>
+    <script language="javascript" src="javascripts/key_status.js" type="text/javascript"></script>
+    <script language="javascript" src="javascripts/sprite.js" type="text/javascript"></script><script language="javascript" src="javascripts/sound.js" type="text/javascript"></script>
+    <script language="javascript" src="javascripts/sound.js" type="text/javascript"></script>
+    <script language="javascript" src="body/player.js" type="text/javascript"></script>
+    <script language="javascript" src="body/enemy.js" type="text/javascript"></script>
+    <script language="javascript" src="body/canvas.js" type="text/javascript"></script>
+    <script language="javascript" src="body/bullet.js" type="text/javascript"></script>
+    <script language="javascript" src="body/score.js" type="text/javascript"></script>
+    <style type="text/css">
+     #canvas1{
+       position: absolute;
+       z-index: 1
+       bottom:0;
+       left: 0;
+     }
+     #canvas{
+       z-index: :0
+       position :0;
+       bottom:0;
+       left: 0;
+     }
+
+    </style>
+  </head>
+  <body>
+
+    <script type='text/javascript'>
+
+    img = new Image();
+    img.src = "images/bg.png";
+    var CANVAS_WIDTH = 700;
+    var CANVAS_HEIGHT = 550;
+    var canvasElement1 = $("<canvas id = canvas1 width='" + CANVAS_WIDTH +
+                      "' height='" + CANVAS_HEIGHT + "'></canvas>");
+    var canvasElement2 = $("<canvas id = canvas2 width='" + CANVAS_WIDTH +
+                      "' height='" + CANVAS_HEIGHT + "'></canvas>");
+    var canvas1 = canvasElement1.get(0).getContext("2d");
+    var canvas2 = canvasElement2.get(0).getContext("2d");
+
+
+    function drawBg(){
+      canvas2.drawImage(img, 0, 0,CANVAS_WIDTH,CANVAS_HEIGHT);
+    };
+
+
+    canvasElement1.appendTo('body');
+    canvasElement2.appendTo('body');
+
+
+    var count = 9;
+    var playerBullets = [];
+    var enemies = [];
+    var enemyBullets = [];
+
+    Number.prototype.clamp = function(min, max) {
+      return Math.min(Math.max(this, min), max);
+    };
+
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>
